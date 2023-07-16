@@ -10,6 +10,8 @@ const Hero = () => {
     { name: "logo-github", link: "https://github.com/Ichiomacode" }, // Added GitHub icon and its link
   ];
 
+  const emailLink = "mailto:ichiomafaustina@gmail.com";
+
   return (
     <section
       id="home"
@@ -34,7 +36,9 @@ const Hero = () => {
           <h4 className="md:text-2xl text-lg md:leading-normal leading-5 mt-4 font-bold text-gray-600">
             Frontend Developer
           </h4>
-          <button className="btn-primary mt-8">Contact Me</button>
+          <a href={emailLink}>
+            <button className="btn-primary mt-8">Contact Me</button>
+          </a>
           <div className="mt-8 text-3xl flex items-center md:justify-start justify-center gap-5">
             {social_media?.map((icon) => (
               <a

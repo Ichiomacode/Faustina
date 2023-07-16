@@ -9,8 +9,8 @@ const Contact = () => {
     },
     {
       logo: "logo-whatsapp",
-      text: "090 375 3916",
-      link: "https://wa.me/0903753916",
+      text: "090 3759 3916",
+      link: "https://wa.me/09037593916",
     },
     {
       logo: "location",
@@ -22,6 +22,23 @@ const Contact = () => {
     },
   ];
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const name = form.elements["name"].value;
+    const email = form.elements["email"].value;
+    const message = form.elements["message"].value;
+
+    // You can implement the logic to send the message to the email address here
+    console.log("Sending message...");
+    console.log("Name:", name);
+    console.log("Email:", email);
+    console.log("Message:", message);
+
+    // Reset the form after sending the message
+    form.reset();
+  };
+
   return (
     <section id="contact" className="py-10 px-3 text-white">
       <div className="text-center mt-8">
@@ -31,11 +48,13 @@ const Contact = () => {
         <p className="text-gray-400 mt-3 text-lg">Get in touch</p>
 
         <div className="mt-16 flex md:flex-row flex-col gap-6 max-w-5xl bg-gray-800 md:p-6 p-2 rounded-lg mx-auto">
-          <form className="flex flex-col flex-1 gap-5">
-            <input type="text" placeholder="Your Name" />
-            <input type="email" placeholder="Your Email Address" />
-            <textarea placeholder="Your Message" rows={10}></textarea>
-            <button className="btn-primary w-fit">Send Message</button>
+          <form className="flex flex-col flex-1 gap-5" onSubmit={handleSubmit}>
+            <input type="text" name="name" placeholder="Your Name" required />
+            <input type="email" name="email" placeholder="Your Email Address" required />
+            <textarea name="message" placeholder="Your Message" rows={10} required></textarea>
+            <button type="submit" className="btn-primary w-fit">
+              Send Message
+            </button>
           </form>
           <div className="flex flex-col gap-7">
             {contact_info.map((contact, i) => (

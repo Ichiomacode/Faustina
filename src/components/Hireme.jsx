@@ -2,6 +2,8 @@ import React from "react";
 import aboutImg from "../assets/images/about.png";
 
 const Hireme = () => {
+  const emailLink = "mailto:ichiomafaustina@gmail.com";
+
   return (
     <section id="hireme" className="py-10 px-3 text-white">
       <div className="text-center">
@@ -18,7 +20,9 @@ const Hireme = () => {
           <p className="lg:text-left text-justify max-w-lg text-sm mt-4 text-gray-200 leading-6">
             If you're looking for a skilled and dedicated frontend developer, I'm here to help! With expertise in HTML, CSS, and JavaScript, along with experience in frontend frameworks like React and Angular, I can create stunning and interactive web applications that exceed your expectations. I pay attention to detail and strive for pixel-perfect designs. Let's collaborate to bring your ideas to life and deliver an outstanding user experience.
           </p>
-          <button className="btn-primary mt-10">Say Hello</button>
+          <a href={emailLink}>
+            <button className="btn-primary mt-10">Say Hello</button>
+          </a>
         </div>
         <div className="lg:w-48 lg:h-48 w-32 h-32 rounded-full overflow-hidden">
           <img
