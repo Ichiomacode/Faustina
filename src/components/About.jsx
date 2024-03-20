@@ -1,6 +1,6 @@
+
 import React from "react";
 import aboutImg from "../assets/images/about.png";
-import cvFile from "../assets/My-cv.pdf"; // Update the path to your CV file
 
 const About = () => {
   return (
@@ -13,7 +13,7 @@ const About = () => {
         <div className="flex flex-col md:flex-row items-center md:gap-6 gap-12 px-4 md:px-10 max-w-6xl mx-auto">
           <div className="p-2">
             <div className="text-gray-300 my-3">
-            <p className="text-justify leading-7 md:w-11/12 mx-auto">
+              <p className="text-justify leading-7 md:w-11/12 mx-auto">
                 Hello there! I'm Faustina Onoriode, a passionate frontend developer with a unique background in biochemistry. My journey into the world of web development began when I decided to combine my love for science with my growing fascination for technology. It was an unexpected transition, but one that has brought immense fulfillment and excitement to my professional life.
 
                 Driven by this newfound passion, I decided to dive headfirst into the world of frontend development. I enrolled in coding bootcamps and online courses to gain a solid foundation in HTML, CSS, and JavaScript. Since then, I have been on an exhilarating journey of continuous learning and growth, expanding my skill set to include modern frameworks like React and Angular.
@@ -24,7 +24,7 @@ const About = () => {
               </p>
               <br />
               <br />
-              <a href={cvFile} download>
+              <a href="./src/assets/faustina Onoriode Portfolio 1011.pdf" download>
                 <button className="btn-primary">Download CV</button>
               </a>
             </div>

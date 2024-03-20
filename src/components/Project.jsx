@@ -1,31 +1,54 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import project1 from "../assets/images/project-1.png";
-import project2 from "../assets/images/project-2.jpg";
-import project3 from "../assets/images/project-3.jpg";
+import SwiperCore, { Pagination, Autoplay } from "swiper";
+import project1 from "../assets/images/project1.jpg";
+import project2 from "../assets/images/project2.png";
+import project3 from "../assets/images/project3.jpg";
+import project4 from "../assets/images/project4.jpg";
+import project5 from "../assets/images/project5.jpg";
+import project6 from "../assets/images/project6.jpg";
 import "swiper/css";
 import "swiper/css/pagination";
-import { Pagination, Autoplay } from "swiper";
+
+SwiperCore.use([Pagination, Autoplay]);
 
 const Project = () => {
   const projects = [
     {
       img: project1,
-      name: "Movie App",
-      github_link: "https://github.com/Ichiomacode/Star-wars-react-app",
-      live_link: "https://faustina-star-app.netlify.app/",
+      name: "Tina's kitchen",
+      github_link: "https://github.com/Ichiomacode/tina-kitchen",
+      live_link: "https://clinquant-cobbler-6f94cc.netlify.app/",
     },
     {
       img: project2,
-      name: "Profile search app",
+      name: "movie app",
       github_link: "https://github.com/Ichiomacode/profile-search-app",
       live_link: "https://search-react-tina.netlify.app/",
     },
     {
       img: project3,
-      name: "Contact us form",
-      github_link: "https://github.com/Ichiomacode/Contact-us-form",
-      live_link: "https://dapper-praline-247c29.netlify.app/",
+      name: "Mealy",
+      github_link: "https://github.com/Stutern-Project-23/Group-4-Mealy-Project-Team-2B",
+      live_link: "https://64a9621901213a7f6d786959--sweet-sherbet-b3e0da.netlify.app/",
+    },
+    {
+      img: project4,
+      name: "Theme profile card",
+      github_link: "https://github.com/Ichiomacode/my-profile-card",
+      live_link: "https://tinaprofilecard.netlify.app/",
+    },
+    {
+      img: project5,
+      name: "To-do-list",
+      github_link: "https://github.com/Ichiomacode/tina-s-to_do-list",
+      live_link: "https://tinastodolist.netlify.app/",
+    },
+    {
+      img: project6,
+      name: "Neomorphism login page",
+      github_link: "https://github.com/Ichiomacode/neomorphism-login-page",
+      live_link: "https://silver-panda-92488e.netlify.app/",
     },
   ];
   
@@ -53,13 +76,17 @@ const Project = () => {
             }}
             pagination={{
               clickable: true,
+              className: "my-swiper-pagination", // Added custom class
             }}
-            modules={[Pagination, Autoplay]}
           >
             {projects.map((project_info, i) => (
               <SwiperSlide key={i}>
                 <div className="h-fit w-full p-4 bg-slate-700 rounded-xl">
-                  <img src={project_info.img} alt="" className="rounded-lg" />
+                  <img
+                    src={project_info.img}
+                    alt=""
+                    className="rounded-lg w-full h-60 object-cover"
+                  />
                   <h3 className="text-xl my-4">{project_info.name}</h3>
                   <div className="flex gap-3">
                     <a
