@@ -18,7 +18,13 @@ const Hireme = () => {
             Do you want any work from me?
           </h2>
           <p className="lg:text-left text-justify max-w-lg text-sm mt-4 text-gray-200 leading-6">
-            If you're looking for a skilled and dedicated frontend developer, I'm here to help! With expertise in HTML, CSS, and JavaScript, along with experience in frontend frameworks like React and Angular, I can create stunning and interactive web applications that exceed your expectations. I pay attention to detail and strive for pixel-perfect designs. Let's collaborate to bring your ideas to life and deliver an outstanding user experience.
+            If you're looking for a skilled and dedicated frontend developer,
+            I'm here to help! With expertise in HTML, CSS, and JavaScript, along
+            with experience in frontend frameworks like React and Angular, I can
+            create stunning and interactive web applications that exceed your
+            expectations. I pay attention to detail and strive for pixel-perfect
+            designs. Let's collaborate to bring your ideas to life and deliver
+            an outstanding user experience.
           </p>
           <a href={emailLink}>
             <button className="btn-primary mt-10">Say Hello</button>

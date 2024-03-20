@@ -1,6 +1,9 @@
 import React from "react";
 
 const Contact = () => {
+  const [location, setLocation] = React.useState("Fetching location...");
+  const [locationClicked, setLocationClicked] = React.useState(false);
+
   const contact_info = [
     {
       logo: "mail",
@@ -14,10 +17,11 @@ const Contact = () => {
     },
     {
       logo: "location",
-      text: "demo location",
+      text: location,
       onClick: () => {
-        // Add your location functionality logic here
-        console.log("Location clicked!");
+        // Get the user's location when clicked
+        getLocation();
+        setLocationClicked(true);
       },
     },
   ];
@@ -37,6 +41,32 @@ const Contact = () => {
 
     // Reset the form after sending the message
     form.reset();
+  };
+
+  const getLocation = () => {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        async (position) => {
+          try {
+            const response = await fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${position.coords.latitude}&lon=${position.coords.longitude}&addressdetails=1`);
+            const data = await response.json();
+            const { address } = data;
+            const country = address.country || "";
+            const state = address.state || "";
+            const lga = address.county || "";
+            setLocation(`Country: ${country}, State: ${state}, LGA: ${lga}`);
+          } catch (error) {
+            console.error("Error retrieving location:", error);
+            setLocation("Failed to retrieve location.");
+          }
+        },
+        () => {
+          setLocation("Failed to retrieve location.");
+        }
+      );
+    } else {
+      setLocation("Geolocation is not supported by this browser.");
+    }
   };
 
   return (
@@ -76,7 +106,9 @@ const Contact = () => {
                     {contact.text}
                   </a>
                 ) : (
-                  <p className="md:text-base text-sm break-words">{contact.text}</p>
+                  <p className={`md:text-base text-sm break-words ${locationClicked ? "text-cyan-600" : ""}`}>
+                    {contact.text}
+                  </p>
                 )}
               </div>
             ))}

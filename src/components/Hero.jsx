@@ -3,9 +3,18 @@ import hero from "../assets/images/real-hero.jpg";
 
 const Hero = () => {
   const social_media = [
-    { name: "logo-instagram", link: "https://instagram.com/faustina_ichioma?igshid=NGExMmI2YTkyZg==" },
-    { name: "logo-facebook", link: "https://www.facebook.com/onoriodefaustina.ichioma.3" },
-    { name: "logo-linkedin", link: "https://www.linkedin.com/in/faustina-onoriode-2939b71b6" },
+    {
+      name: "logo-instagram",
+      link: "https://instagram.com/faustina_ichioma?igshid=NGExMmI2YTkyZg==",
+    },
+    {
+      name: "logo-facebook",
+      link: "https://www.facebook.com/onoriodefaustina.ichioma.3",
+    },
+    {
+      name: "logo-linkedin",
+      link: "https://www.linkedin.com/in/faustina-onoriode-2939b71b6",
+    },
     { name: "logo-twitter", link: "https://twitter.com/ichiomafaustina" },
     { name: "logo-github", link: "https://github.com/Ichiomacode" }, // Added GitHub icon and its link
   ];
@@ -34,7 +43,7 @@ const Hero = () => {
             My Name is <span>Faustina Onoriode</span>
           </h1>
           <h4 className="md:text-2xl text-lg md:leading-normal leading-5 mt-4 font-bold text-gray-600">
-            Frontend Developer
+            Software Developer
           </h4>
           <a href={emailLink}>
             <button className="btn-primary mt-8">Contact Me</button>

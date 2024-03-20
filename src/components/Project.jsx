@@ -23,8 +23,8 @@ const Project = () => {
     {
       img: project2,
       name: "movie app",
-      github_link: "https://github.com/Ichiomacode/profile-search-app",
-      live_link: "https://search-react-tina.netlify.app/",
+      github_link: "https://github.com/Ichiomacode/Star-wars-react-app",
+      live_link: "https://faustina-star-app.netlify.app/",
     },
     {
       img: project3,
