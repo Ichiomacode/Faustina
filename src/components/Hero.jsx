@@ -22,10 +22,7 @@ const Hero = () => {
   const emailLink = "mailto:ichiomafaustina@gmail.com";
 
   return (
-    <section
-      id="home"
-      className="min-h-screen flex py-10 md:flex-row flex-col items-center"
-    >
+    <section id="home" className="min-h-screen flex py-8 md:flex-row flex-col items-center">
       <div className="flex-1 flex items-center justify-center h-full">
         <img
           src={hero}
@@ -46,9 +43,9 @@ const Hero = () => {
             Software Developer
           </h4>
           <a href={emailLink}>
-            <button className="btn-primary mt-8">Contact Me</button>
+            <button className="btn-primary mt-6">Contact Me</button>
           </a>
-          <div className="mt-8 text-3xl flex items-center md:justify-start justify-center gap-5">
+          <div className="mt-6 text-3xl flex items-center md:justify-start justify-center gap-5">
             {social_media?.map((icon) => (
               <a
                 key={icon.name}
